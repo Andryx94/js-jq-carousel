@@ -26,10 +26,10 @@ function caroselloIndietro (){
   puntoCorrente.removeClass("active");
 
   if (immagineCorrente.hasClass("first")){
-    $(".images .last").addClass("active");
-    $(".nav .last").addClass("active");
-
+    $(".images img.last").addClass("active");
+    $(".nav i.last").addClass("active");
   }
+
   else {
     immagineCorrente.prev().addClass("active");
     puntoCorrente.prev().addClass("active");
@@ -45,10 +45,10 @@ function caroselloAvanti (){
   puntoCorrente.removeClass("active");
 
   if (immagineCorrente.hasClass("last")){
-    $(".images .first").addClass("active");
-    $(".nav .first").addClass("active");
-
+    $(".images img.first").addClass("active");
+    $(".nav i.first").addClass("active");
   }
+
   else {
     immagineCorrente.next().addClass("active");
     puntoCorrente.next().addClass("active");

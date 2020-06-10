@@ -13,12 +13,20 @@ $(document).ready(
         caroselloAvanti();
       }
     )
+
+    //click punto
+    $(".nav i").click(
+      function() {
+        var numero = $(this).index();
+        clickPunto(numero);
+      }
+    )
   }
 );
 
 
 //FUNZIONE Carosello indietro
-function caroselloIndietro (){
+function caroselloIndietro() {
   var immagineCorrente = $(".images img.active");
   var puntoCorrente = $(".nav i.active");
 
@@ -37,7 +45,7 @@ function caroselloIndietro (){
 };
 
 //FUNZIONE Carosello avanti
-function caroselloAvanti (){
+function caroselloAvanti() {
   var immagineCorrente = $(".images img.active");
   var puntoCorrente = $(".nav i.active");
 
@@ -53,4 +61,18 @@ function caroselloAvanti (){
     immagineCorrente.next().addClass("active");
     puntoCorrente.next().addClass("active");
   }
+};
+
+//FUNZIONE click punto
+function clickPunto(numero) {
+  var immagineCorrente = $(".images img.active");
+  var puntoCorrente = $(".nav i.active");
+  var immagineRelativa = $(".images img").eq(numero);
+  var puntoRelativo = $(".nav i").eq(numero);
+
+  immagineCorrente.removeClass("active");
+  puntoCorrente.removeClass("active");
+
+  immagineRelativa.addClass("active");
+  puntoRelativo.addClass("active");
 };
